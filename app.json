@@ -4,12 +4,12 @@
     "slug": "YogaApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/footer-logo-bg.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/splash1.png",
+      "resizeMode": "cover",
+      "width":10,
+      "height":10
     },
     "assetBundlePatterns": [
       "**/*"
