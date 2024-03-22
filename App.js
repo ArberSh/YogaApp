@@ -2,23 +2,23 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomePage from './pages/HomePage';
-import Lesson from './pages/Lesson';
-import Beginner from './pages/Beginner';
+import HomePage from './pages/Lessons';
+import Nav from './pages/Nav';
+import Program from './pages/Program';
 
 export default function App() {
   const Stack = createStackNavigator();
 
   return (
     <NavigationContainer styles={styles.container}>
-    <Lesson></Lesson>
+    <Nav></Nav>
       <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
-          name="Home"
+          name="HomePage"
           component={HomePage}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Beginner" component={Beginner} />
+        <Stack.Screen name="Program" component={Program} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

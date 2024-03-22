@@ -6,10 +6,8 @@
     "orientation": "portrait",
     "icon": "./assets/footer-logo-bg.png",
     "splash": {
-      "image": "./assets/splash1.png",
-      "resizeMode": "cover",
-      "width":10,
-      "height":10
+      "image": "./assets/splash2.png",
+      "resizeMode": "contain"
     },
     "assetBundlePatterns": [
       "**/*"
