@@ -1,33 +1,53 @@
-import { StyleSheet,View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { StyleSheet, View, Text, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Lesson = ( ) => {
+const Lesson = ({ data }) => {
+  console.log('Lesson data:', data); // Log the data object
+
+  if (!data || !data.english_name) {
+    console.error('Invalid data:', data);
+    return null; // Return null if data is invalid
+  }
+
   return (
-    <View style={style.Container}>
-        <View style={style.Title}>
-            <Text style={style.FontSize}>Stress Relief</Text>
-            <Text>Time:14min</Text>
+    <TouchableOpacity  >
+      <View style={styles.container}>
+        <View style={styles.title}>
+          <Text style={styles.fontSize}>{data.english_name}</Text>
+          <Text>Time: {data.time}</Text>
+          <Text>Category: {data.category}</Text>
         </View>
-    </View>
-  )
-}
+        <View>
+          <Image style={styles.image} source={{ uri: data.image }} />
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
-const style = StyleSheet.create({
-    Container:{
-        padding:10,
-        borderRadius:6,
-        borderWidth:2,
-        borderColor:'gray',
-        width:380,
-        height:120,
-        marginBottom:14
-    },
-    Title:{
-        flexDirection:'column'
-    },
-    FontSize:{
-        fontSize:16
-    }
-})
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+    borderRadius: 6,
+    borderWidth: 2,
+    borderColor: '#49A003',
+    width: 380,
+    height: 120,
+    marginBottom: 14,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  title: {
+    flexDirection: 'column',
+  },
+  fontSize: {
+    fontSize: 16,
+  },
+  image: {
+    width: 80,
+    height: 80,
+  },
+});
 
-export default Lesson
+export default Lesson;

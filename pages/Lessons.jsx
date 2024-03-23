@@ -1,27 +1,33 @@
-import React from 'react'
-import { StyleSheet,View,Text, Button } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-import Lesson from '../components/Lesson'
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
+import Lesson from '../components/Lesson';
+import lessonData from '../LessonData.json'; // Import lesson data
 
-function HomePage() {
-  const navigation = useNavigation();
+const Lessons = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(lessonData); // Set data from lessonData.json
+  }, []);
+
+  const renderItem = ({ item, index }) => <Lesson key={index} data={item} />;
+
   return (
-    <View style={style.container}>
-      <Lesson/>
-      <Lesson/>
-      <Lesson/>
+    <View style={styles.container}>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={(item, index) => index.toString()}
+      />
     </View>
-  )
-}
+  );
+};
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 6,
+  },
+});
 
-  container:{
-    marginTop:20,
-    flex:1,
-    alignItems: 'center',
-  }
-
-})
-
-export default HomePage
+export default Lessons;

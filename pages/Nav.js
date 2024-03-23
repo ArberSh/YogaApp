@@ -40,7 +40,7 @@ const style = StyleSheet.create({
   },
   Logo:{
     top:-10,
-    left:155,
+    left:142,
     width:60,
     height:60,
   },
