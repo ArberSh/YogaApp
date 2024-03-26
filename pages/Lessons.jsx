@@ -26,7 +26,7 @@ const Lessons = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 6,
+    padding: 12,
   },
 });
 
