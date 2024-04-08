@@ -17,7 +17,7 @@ function DetailsScreen() {
       </View>
       <View style={style.Second}>
       <Text style={style.FontSize} onPress={() => navigation.navigate('HomePage')}>Lesson</Text>
-      <Text style={style.FontSize} onPress={() => navigation.navigate('Program')}>Program</Text>
+      <Text style={style.FontSize} onPress={() => navigation.navigate('Programs')}>Program</Text>
       </View>
     </View>
   )
