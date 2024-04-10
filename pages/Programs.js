@@ -7,14 +7,15 @@ function Programs() {
     <ScrollView contentContainerStyle={styles.container}>
       <Program />
       <Program />
+      <Program />
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    margin: 10,
+    paddingHorizontal:14,
+    backgroundColor:"#EFEFEF"
   },
 });
 
