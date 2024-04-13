@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomePage from './pages/Lessons';
 import Nav from './pages/Nav';
 import Programs from './pages/Programs';
+import Exercise from './pages/Exercise';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -19,6 +20,7 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen name="Programs" component={Programs} options={{ headerShown: false }}/>
+        <Stack.Screen name="Exercise" component={Exercise} options={{ headerShown: true }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

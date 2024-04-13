@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "title": "Beginner's Mind",
+      "level": "Beginner",
+      "time": "20",
+      "videos": 5,
+      "description": "A gentle introduction to yoga for beginners, focusing on basic poses and breathing techniques to help develop flexibility and relaxation.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5nZ-xwp5w4PHmV2RAUHWHSGzT4xvxyroWYoIYVxFf5g&s"
+    },
+    {
+      "id": 2,
+      "title": "Mindful Flow",
+      "level": "Intermediate",
+      "time": "30",
+      "videos": 7,
+      "description": "An intermediate-level yoga program that combines flowing sequences with mindfulness practices, aimed at improving strength, balance, and mental clarity.",
+      "image": "https://images.squarespace-cdn.com/content/v1/60e724a33948065e3ff7b048/d86eb58f-4cd8-4984-91df-d50d9426f492/angieyeo_jan2022_4.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Power Yoga Challenge",
+      "level": "Advanced",
+      "time": "40",
+      "videos": 10,
+      "description": "An advanced-level power yoga program designed to challenge your strength, flexibility, and endurance through dynamic movements and intense sequences.",
+      "image": "https://blobs.ekhartyoga.com/cdn-cgi/image/width=800,quality=90/mediauploads/api.ekhartyoga.com/uploads/media/program/55/poweryogaprogram.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Restorative Yoga",
+      "level": "All Levels",
+      "time": "25",
+      "videos": 6,
+      "description": "A restorative yoga program suitable for all levels, focusing on gentle stretches and deep relaxation poses to release tension and promote healing.",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d31ed671abe780001b2964d/1617389409470-M5AGW7YXUAPV1RZZR2N3/Johna+Kest+in+lotus+pose"
+    },
+    {
+      "id": 5,
+      "title": "Yin Yoga for Flexibility",
+      "level": "All Levels",
+      "time": "35",
+      "videos": 8,
+      "description": "A yin yoga program suitable for all levels, emphasizing long-held poses to target connective tissues and increase flexibility and joint mobility.",
+      "image": "https://www.ninjaquestfitness.com/wp-content/uploads/2024/03/manflowyoga_yogaformen_beginners_warrior2-HQ.jpg"
+    }
+  ]
+  

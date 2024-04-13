@@ -1,17 +1,21 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native'
+
 
 const Lesson = ({ data }) => {
-  console.log('Lesson data:', data); // Log the data object
+
+  const navigation = useNavigation();
+
 
   if (!data || !data.english_name) {
     console.error('Invalid data:', data);
-    return null; // Return null if data is invalid
+    return null;
   }
 
   return (
-    <TouchableOpacity  >
+    <TouchableOpacity onPress={() => navigation.navigate('Exercise')} >
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.fontSize}>{data.english_name}</Text>

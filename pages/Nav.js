@@ -25,7 +25,6 @@ function DetailsScreen() {
 
 const style = StyleSheet.create({
   NavContainer:{
-    zIndex:100,
     marginTop:20
   },
   First:{
