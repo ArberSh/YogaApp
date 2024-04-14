@@ -16,9 +16,8 @@ const Exercise = ({data}) => {
 const style = StyleSheet.create({
     Container:{
         zIndex:100,
-        top:-10,
-        backgroundColor:"blue"
-    }
+        top:-10
+        }
 })
 
 export default Exercise
