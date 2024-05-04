@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text, FlatList } from 'react-native';
 import Lesson from '../components/Lesson';
 import lessonData from '../LessonData.json'; // Import lesson data
+import NavBottom from './NavBottom';
 
 const Lessons = () => {
   const [data, setData] = useState([]);

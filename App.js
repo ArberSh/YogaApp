@@ -1,74 +1,94 @@
-// App.js
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import {
+  DrawerItemList,
+  createDrawerNavigator,
+} from "@react-navigation/drawer";
+import NavBottom from "./pages/NavBottom"; // Import NavBottom component
+import HomePage from "./pages/HomePage"; // Import HomePage component
+import AboutUs from "./MenuBar/AboutUs.jsx"; // Import AboutMe component
+import { View, StyleSheet, SafeAreaView, Image, Text } from "react-native"; // Import View and StyleSheet components
+import Pfp from "./assets/Png.png";
+import { borderRadius, color, fontSize, fontWeight, width } from "@mui/system";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Profile from './MenuBar/Profile.jsx'
 
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import NavigationBar from './NavigationBar';
-import NavigationDrawer from './NavigationDrawer';
+const Drawer = createDrawerNavigator();
 
-const Stack = createStackNavigator();
-
-const App = () => {
+function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Home"
+      <Drawer.Navigator
+        drawerContent={(props) => {
+          return (
+            <SafeAreaView>
+              <View
+                style={{
+                  height: 200,
+                  width: "100%",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderBottomWidth: 1,
+                }}
+              >
+                <Image
+                  source={Pfp}
+                  style={{
+                    height: 100,
+                    width: 100,
+                    borderRadius: 65,
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: 22,
+                    marginVertical: 6,
+                    fontWeight: "bold",
+                    color: "#111",
+                  }}
+                >
+                  Arber Shaska
+                </Text>
+              </View>
+              <DrawerItemList {...props} />
+            </SafeAreaView>
+          );
+        }}
         screenOptions={{
-          header: (props) => <NavigationBar {...props} />,
-        }}>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Lesson" component={LessonScreen} />
-        <Stack.Screen name="Program" component={ProgramScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-        <Stack.Screen name="AboutUs" component={AboutUsScreen} />
-      </Stack.Navigator>
+          drawerActiveBackgroundColor: "#B7FFB2",
+          drawerLabelStyle: {
+            color: "#434343",
+          },
+        }}
+      >
+        <Drawer.Screen
+  name="Home Page"
+  options={{
+    drawerLabel:"Home",
+    title:"Home",
+    drawerIcon: () => (
+      <MaterialCommunityIcons name='home' size={30} color="#808080" />
+    ),
+  }}
+  component={NavBottom}
+/>
+  <Drawer.Screen name="Profile"  options={{
+    drawerLabel:"Profile",
+    title:"Arber Shaska",
+    drawerIcon: () => (
+      <MaterialCommunityIcons name='account' size={30} color="#808080" />
+    ),
+  }} component={Profile} />
+        <Drawer.Screen name="About Us"  options={{
+    drawerLabel:"About Us",
+    title:"About Us",
+    drawerIcon: () => (
+      <MaterialCommunityIcons name='chat-question-outline' size={30} color="#808080" />
+    ),
+  }} component={AboutUs} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
-};
-
-const HomeScreen = () => {
-  return (
-    <View>
-      <NavigationBar />
-      <Text>Home Screen</Text>
-    </View>
-  );
-};
-
-const LessonScreen = () => {
-  return (
-    <View>
-      <NavigationBar />
-      <Text>Lesson Screen</Text>
-    </View>
-  );
-};
-
-const ProgramScreen = () => {
-  return (
-    <View>
-      <NavigationBar />
-      <Text>Program Screen</Text>
-    </View>
-  );
-};
-
-const ProfileScreen = () => {
-  return (
-    <View>
-      <NavigationBar />
-      <Text>Profile Screen</Text>
-    </View>
-  );
-};
-
-const AboutUsScreen = () => {
-  return (
-    <View>
-      <NavigationBar />
-      <Text>About Us Screen</Text>
-    </View>
-  );
-};
+}
 
 export default App;
