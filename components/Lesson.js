@@ -1,13 +1,11 @@
-import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native'
+// Lesson.js
 
+import React from 'react';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Lesson = ({ data }) => {
-
   const navigation = useNavigation();
-
 
   if (!data || !data.english_name) {
     console.error('Invalid data:', data);
@@ -15,7 +13,7 @@ const Lesson = ({ data }) => {
   }
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Exercise')} >
+    <TouchableOpacity onPress={() => navigation.navigate('Exercise', { lessonData: data })}>
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.fontSize}>{data.english_name}</Text>
@@ -36,7 +34,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     borderWidth: 2,
     borderColor: '#49A003',
-    width: 380,
+    width: '100%',
     height: 120,
     marginBottom: 14,
     flexDirection: 'row',

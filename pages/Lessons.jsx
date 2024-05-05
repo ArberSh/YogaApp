@@ -1,14 +1,21 @@
+// Lessons.jsx
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text, FlatList } from 'react-native';
 import Lesson from '../components/Lesson';
 import lessonData from '../LessonData.json'; // Import lesson data
-import NavBottom from './NavBottom';
 
-const Lessons = () => {
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 14,
+  },
+});
+
+export default function Lessons() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(lessonData); // Set data from lessonData.json
+    setData(lessonData); 
   }, []);
 
   const renderItem = ({ item, index }) => <Lesson key={index} data={item} />;
@@ -22,13 +29,4 @@ const Lessons = () => {
       />
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 14,
-  },
-});
-
-export default Lessons;
+}
