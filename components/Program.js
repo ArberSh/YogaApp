@@ -3,8 +3,10 @@ import { StyleSheet,Button, Image, Text, View } from 'react-native'
 import BeginnerYoga from '../assets/BeginnerYoga.webp'
 import Clock from '../assets/clock.png'
 import Play from '../assets/play.png'
+import { useNavigation } from '@react-navigation/native';
 
 const Program = ({data}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.MainContainer}>
       <View >
@@ -28,7 +30,11 @@ const Program = ({data}) => {
         <View>
           <Text style={{marginBottom:10}}>{data.description}</Text>
         </View>
-        <Button color="#49A003" title="Join">Idk</Button>
+        <Button  
+  onPress={() => navigation.navigate('InfoProgram', { data: data })} 
+  color="#49A003" 
+  title="Join"
+></Button>
       </View>
     </View>
   )

@@ -10,6 +10,7 @@ import Settings from './MenuBar/Settings.jsx'
 import { createStackNavigator } from '@react-navigation/stack';
 import Exercise from "./pages/Exercise.jsx";
 import Camera from "./pages/Camera.jsx";
+import InfoProgram from "./pages/InfoProgram.jsx";
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -110,6 +111,7 @@ function App() {
         />
         <Stack.Screen name="Exercise" component={Exercise} />
         <Stack.Screen name="Camera" component={Camera} options={{ headerShown: false }}/>
+        <Stack.Screen name="InfoProgram" component={InfoProgram} />
       </Stack.Navigator>
     </NavigationContainer>
   );
